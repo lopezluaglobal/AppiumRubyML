@@ -5,6 +5,8 @@ CAPABILITIES = {
   platformName: 'Android',
   automationName: 'UiAutomator2',
   deviceName: 'motog8',
+  appPackage: 'com.mercadolibre', 
+  appActivity: 'com.mercadolibre.splash.SplashActivity'
 }
 
 SERVER_URL = 'http://localhost:4723'
@@ -39,7 +41,7 @@ class AppiumTest < Test::Unit::TestCase
 
 
     # Abrimos la aplicación de Mercado Libre
-    @driver.wait { |d| d.find_element :xpath, mlapp }.click
+    #@driver.wait { |d| d.find_element :xpath, mlapp }.click
 
     # Esperamos a que se cargue la pantalla de inicio  click a buscador y busqueda
     @driver.wait { |d|  d.find_element :xpath , searchBox  }.click
